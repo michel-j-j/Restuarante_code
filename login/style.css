@@ -1,0 +1,257 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    background: url(img/fondo.jpg) no-repeat center center fixed;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    font-family:'fonts/Office Square df', 'Office Square df','Office Square df', sans-serif;
+    height: 100vh;
+}
+
+.login-box
+{
+    width: 360px;
+    height: 500px;
+    background:#383838e0;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius:5%;
+}
+.login-box .avatar
+{   top: -40px;
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+
+    border: none;
+    border: 2px;
+    border-radius: 100%;
+
+    position: relative;
+    margin-bottom: -15px;
+    box-shadow:0px 0.8px rgba(107, 107, 107, 0.425);
+    
+}
+/*
+.login-box h1
+{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+*/
+.login-box label
+{
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-weight:bold;
+}
+
+.login-box input
+{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"]
+{   border: none;
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 20px;
+    background: transparent;
+    outline: none;
+    margin-top: 10px;
+    height: 40px;
+    color: #fff;
+    font-size: 14px;
+    text-indent: 5px;
+    letter-spacing: 3px;
+}
+.login-box input[type="text"]:hover,
+.login-box input[type="password"]:hover
+{  
+    border: 1px solid rgb(80, 80, 80);
+}
+.login-box input[type="submit"]
+{   border: none;
+    outline: none;
+    height: 40px;
+    background: darkgray;
+    font-size: 22px;
+    border-radius: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+}
+.login-box input[type="submit"]:hover
+{   
+    background: rgb(255, 255, 255);
+}
+.login-box a 
+{   margin-right: 5px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    line-height:20px;
+    color: darkgrey;
+}
+
+.login-box a:hover
+{ 
+    color: #fff;
+}
+
+.register-box
+{
+    width: 360px;
+    height: 600px;
+    background:#383838e0;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius:5%;
+}
+.register-box .avatar
+{   top: -40px;
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+
+    border: none;
+    border: 2px;
+    border-radius: 100%;
+
+    position: relative;
+    margin-bottom: -30px;
+    box-shadow:0px 0.8px rgba(107, 107, 107, 0.425);
+    
+}
+/*
+.register-box h1
+{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+*/
+.register-box label
+{
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-weight:bold;
+}
+
+.register-box input
+{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.register-box input[type="text"],
+.register-box input[type="password"]
+{   border: none;
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 20px;
+    background: transparent;
+    outline: none;
+    margin-top: 10px;
+    height: 35px;
+    color: #fff;
+    font-size: 14px;
+    text-indent: 5px;
+    letter-spacing: 3px;
+}
+.register-box input[type="text"]:hover,
+.register-box input[type="password"]:hover
+{  
+    border: 1px solid rgb(80, 80, 80);
+}
+.register-box input[type="submit"]
+{   border: none;
+    outline: none;
+    height: 40px;
+    background: darkgray;
+    font-size: 22px;
+    border-radius: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+}
+.register-box input[type="submit"]:hover
+{   
+    background: rgb(255, 255, 255);
+}
+.register-box a 
+{   margin-right: 5px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    line-height:20px;
+    color: darkgrey;
+}
+
+.register-box a:hover
+{ 
+    color: #fff;
+}
+.error
+{
+    background: red;
+    text-align: center;
+    color: white;
+}
+.svg-loader{
+    display:flex;
+    position: relative;
+    align-content: space-around;
+    justify-content: center;
+  }
+  .loader-svg{
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    fill: none;
+    stroke-width: 5px;
+    stroke-linecap: round;
+    stroke: rgb(64, 0, 148);
+  }
+  .loader-svg.bg{
+    stroke-width: 8px;
+    stroke: rgb(207, 205, 245);
+  }
+.animate{
+    stroke-dasharray: 242.6;
+    animation: fill-animation 1s cubic-bezier(1,1,1,1) 0s infinite;
+  }
+  
+  @keyframes fill-animation{
+    0%{
+      stroke-dasharray: 40 242.6;
+      stroke-dashoffset: 0;
+    }
+    50%{
+      stroke-dasharray: 141.3;
+      stroke-dashoffset: 141.3;
+    }
+    100%{
+      stroke-dasharray: 40 242.6;
+      stroke-dashoffset: 282.6;
+    }
+  }

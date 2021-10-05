@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,shrik-to-fit=no">
+        <title>Restaurante</title>
+        <link rel = "stylesheet" href="style.css">
+        <link rel = "stylesheet" href="bosstrap/css/bootstrap.min.css">
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+    </head>
+    <body >
+        <div class="svg-loader" style="display: none;">
+            <svg class="svg-container" height="100" width="100" viewBox="0 0 100 100">
+                <circle class="loader-svg bg" cx="50" cy="50" r="45"></circle>
+                <circle class="loader-svg animate" cx="50" cy="50" r="45"></circle>
+            </svg>
+        </div>
+        <div class="error" style="display: none;">
+            <span>Datos de ingreso no validos, intentelo nuevamente..</span>
+        </div>
+        <div class="login-box" id="login-box">
+            <img class="avatar" src="img/logo3.png" alt="logo">
+            <h1>
+            </h1>
+
+            <form method="POST" action="login.php" id = "enviar">   <!--Formulario de Login.-->
+                <!--USERNAME-->
+                <label for="Username"> </label>
+                 <!--Email--> <input type="text" name='email' placeholder="Correo Electrónico">
+
+                <!--PASSWORD-->
+                <label for ="Password"></label>
+                 <!--Contraseña--><input type ="password" name='pass' placeholder="Contraseña">
+
+                <input type="submit" value="Iniciar Sesión" name = "btn1" class="btn1">            
+
+                <a href="#">Perdiste tu contraseña?</a>
+                <a id="bt" href="#" onclick="cerrar()">No tienes cuenta?</a>
+            </form>
+        </div>
+            <div class="register-box" id = "register-box" style ="display: none;">
+                <img class="avatar" src="img/logo3.png" alt="logo">
+                <form method="POST" action="register/register.php">   <!--Formulario de Login.-->
+                    <div class="center-con">
+    
+                        <div class="round">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        
+                    </div>
+ 
+                    <label for="Email"> </label>
+                     <!--Email--> <input type="text" name='email' placeholder="Correo Electrónico">
+    
+                     <label for="Name"> </label>
+                     <!--Nombre--> <input type="text" name='name' placeholder="Nombre">
+    
+                     <label for="Surname"> </label>
+                     <!--Apellido--> <input type="text" name='surname' placeholder="Apellido">
+    
+                     <label for="number"> </label>
+                     <!--Phone Number--> <input type="text" name='number' placeholder="Numero de Telefono">
+    
+                     <!--PASSWORD-->
+                    <label for ="Password"></label>
+                     <!--Contraseña--><input type ="password" name='pass' placeholder="Contraseña">
+                    <input type="submit" onclick="mostrar()" value="Crear Cuenta" name = "btn1">
+                </form>
+        </div>
+        <script src= "bosstrap/js/bootstrap.min.js"></script> <!--llamada a bosstrap-->
+        <script>
+         function mostrar()
+            {
+                div = document.getElementById('register-box');
+                div.style.display = 'none';
+                div = document.getElementById('login-box');
+                div.style.display = 'block';
+            }
+            function cerrar()
+            {
+                div = document.getElementById('login-box');
+                div.style.display = 'none';
+                div = document.getElementById('register-box');
+                div.style.display = 'block';
+            }
+ jQuery(document).on('submit','#enviar',function(event){
+      event.preventDefault();
+
+      jQuery.ajax({
+        url: 'login.php',
+        type: 'POST',
+        datatype: 'json',
+        data: $(this).serialize(),
+        beforeSend:function(){
+            $('.btn1').click(function(){
+		$(".btn1").addClass(".svg-loader");
+	});
+      }
+ })
+ .done(function(respuesta){
+     var dato = respuesta;
+     if(dato[9]=="f")
+     {
+       location.href = 'pantalla principal/main.html';
+     }
+     else
+     {
+        $('.error').slideDown('slow');
+         setTimeout(function(){
+             $('.error').slideUp('slow');
+         },3000);
+         $('.btn1').val('Iniciar Sesión');
+     }
+
+ })
+ .fail(function(resp){
+    console.log(resp.responseText);
+
+ })
+ .always(function(){
+    console.log('complete');
+
+ });
+
+}); 
+        </script>
+
+    </body>
+    
+    
+</html>
